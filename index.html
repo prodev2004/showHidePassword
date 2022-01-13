@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Show/Hide Password</title>
+    <!-- Source Code in the description -->
+    <!-- I'm using font awesome for the icons -->
+</head>
+<body>
+    <div class="container">
+        <div class="form_group">
+            <div class="helper-div"></div>
+            <div class="light"></div>
+            <input type="password" placeholder="Type your password">
+            <i class="fas fa-eye-slash"></i>
+        </div>
+    </div>
+
+    <script>
+        const input = document.querySelector('input');
+        const light = document.querySelector('.light');
+        const eyeIcon = document.querySelector('i');
+
+        eyeIcon.addEventListener('click', () => {
+            if (input.type == 'password' && eyeIcon.classList.value == 'fas fa-eye-slash') {
+                input.type = 'text'
+                eyeIcon.classList.value = 'fas fa-eye'
+            } else {
+                input.type = 'password'
+                eyeIcon.classList.value = 'fas fa-eye-slash'
+            }
+            document.body.classList.toggle('show_password');
+        })
+    </script>
+</body>
+</html>
